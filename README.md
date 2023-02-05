@@ -16,7 +16,7 @@ go install github.com/dabao-zhao/ddltoall@latest
 // -u sql dsn
 // -t 表名匹配规则
 
-ddltomodel ddl -s=".\test.sql" -d="test"
+ddltoall ddl -s=".\test.sql" -d="test"
 
-ddltomodel datasource -u="root:123456@tcp(127.0.0.1:3306)/test" -t="*" -d="test"
+ddltoall datasource -u="root:123456@tcp(127.0.0.1:3306)/test" -t="*" -d="test"
 ```
