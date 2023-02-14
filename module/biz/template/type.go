@@ -7,7 +7,7 @@ type (
 		{{.fields}}
 	}
 
-	{{.lowerStartCamelObject}}Repo interface{
+	{{.upperStartCamelObject}}Repo interface{
 		{{.method}}
 	}
 

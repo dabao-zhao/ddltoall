@@ -5,6 +5,7 @@ import (
 	"github.com/dabao-zhao/ddltoall/output"
 	"github.com/dabao-zhao/ddltoall/parser"
 	"github.com/dabao-zhao/ddltoall/util/filex"
+	"github.com/dabao-zhao/ddltoall/util/stringx"
 )
 
 func genNew(table *parser.Table) (string, error) {
@@ -18,6 +19,7 @@ func genNew(table *parser.Table) (string, error) {
 		Parse(text).
 		Execute(map[string]interface{}{
 			"upperStartCamelObject": camel,
+			"lowerStartCamelObject": stringx.From(table.Name.ToCamel()).Untitle(),
 			"data":                  table,
 		})
 	if err != nil {
