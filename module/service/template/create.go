@@ -3,9 +3,9 @@ package template
 const (
 	CreateMethod = `
 func (s *{{.upperStartCamelObject}}Service) Create(ctx context.Context, req *types.Create{{.upperStartCamelObject}}Request) (*types.Create{{.upperStartCamelObject}}Response, error) {
-	var data *biz.{{.upperStartCamelObject}}
-	_ = copier.Copy(data, req)
-	create, err := s.useCase.Create(ctx, data)
+	var data biz.{{.upperStartCamelObject}}
+	_ = copier.Copy(&data, req)
+	create, err := s.useCase.Create(ctx, &data)
 	if err != nil {
 		s.logger.Error(err)
 		return nil, errors.New("create err")
