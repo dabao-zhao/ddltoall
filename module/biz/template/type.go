@@ -12,7 +12,7 @@ type (
 	}
 
 	{{.upperStartCamelObject}}UseCase struct {
-		repo   {{.lowerStartCamelObject}}Repo
+		repo   {{.upperStartCamelObject}}Repo
 		logger *logging.Logger
 	}
 )
