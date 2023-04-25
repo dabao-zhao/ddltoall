@@ -7,14 +7,14 @@ type (
 		{{.fields}}
 	}
 	Create{{.upperStartCamelObject}}Response struct {
-		{{.fields}}
+		{{.fieldsOnlyJsonTag}}
 	}
 
 	Update{{.upperStartCamelObject}}Request struct {
 		{{.fields}}
 	}
 	Update{{.upperStartCamelObject}}Response struct {
-		{{.fields}}
+		{{.fieldsOnlyJsonTag}}
 	}
 
 	Delete{{.upperStartCamelObject}}Request struct {
@@ -27,7 +27,7 @@ type (
 		{{.fields}}
 	}
 	FindOne{{.upperStartCamelObject}}Response struct {
-		{{.fields}}
+		{{.fieldsOnlyJsonTag}}
 	}
 )
 `
