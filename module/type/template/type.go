@@ -29,6 +29,30 @@ type (
 	FindOne{{.upperStartCamelObject}}Response struct {
 		{{.fieldsOnlyJsonTag}}
 	}
+
+	FindAll{{.upperStartCamelObject}}Request struct {
+		{{.fields}}
+	}
+	FindAll{{.upperStartCamelObject}}Response struct {
+		Items []*FindAll{{.upperStartCamelObject}}ResponseItem {{.itemTag}}
+	}
+	FindAll{{.upperStartCamelObject}}ResponseItem struct {
+		{{.fieldsOnlyJsonTag}}
+	}
+
+	Paginate{{.upperStartCamelObject}}Request struct {
+		{{.fields}}
+
+		{{.paginateRequestTag}}
+	}
+	Paginate{{.upperStartCamelObject}}Response struct {
+		Items []*Paginate{{.upperStartCamelObject}}ResponseItem {{.itemTag}}
+
+		{{.paginateResponseTag}}
+	}
+	Paginate{{.upperStartCamelObject}}ResponseItem struct {
+		{{.fieldsOnlyJsonTag}}
+	}
 )
 `
 

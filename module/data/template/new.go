@@ -8,4 +8,8 @@ func New{{.upperStartCamelObject}}Repo(db *gorm.DB, logger *logging.Logger) biz.
 		logger : logger,
 	}
 }
+
+func (rp *{{.lowerStartCamelObject}}Repo) TableName() string {
+	return {{.table}}
+}
 `

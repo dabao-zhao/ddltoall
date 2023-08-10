@@ -35,6 +35,9 @@ func genTypes(table *parser.Table) (string, error) {
 			"fields":                    fieldsString,
 			"fieldsOnlyJsonTag":         fieldsOnlyJsonTagString,
 			"data":                      table,
+			"itemTag":                   "`json:\"items\"`",
+			"paginateRequestTag":        "Page int64 `json:\"page\" form:\"page\"`\n\t\tPageSize int64 `json:\"page_size\" form:\"page_size\"`\n\t\tOrderBy string `json:\"order_by\" form:\"order_by\"`",
+			"paginateResponseTag":       "PageCount int64 `json:\"page_count\"`",
 		})
 	if err != nil {
 		return "", err

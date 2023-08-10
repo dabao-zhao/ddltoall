@@ -121,7 +121,19 @@ func (g *DefaultGenerator) genBiz(in *parser.Table) (string, error) {
 	if err != nil {
 		return "", err
 	}
-	findCode = append(findCode, findOneCode)
+	findAllCode, err := genFindAll(in)
+	if err != nil {
+		return "", err
+	}
+	paginateCode, err := genPaginate(in)
+	if err != nil {
+		return "", err
+	}
+	countCode, err := genCount(in)
+	if err != nil {
+		return "", err
+	}
+	findCode = append(findCode, findOneCode, findAllCode, paginateCode, countCode)
 
 	updateCode, err := genUpdate(in)
 	if err != nil {

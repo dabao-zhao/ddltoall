@@ -5,7 +5,8 @@ const ImportTpl = `import (
 
 	"{{.bizPackage}}"
 
-	"gorm.io/gorm"
+	"github.com/dabao-zhao/where-builder"
 	"github.com/op/go-logging"
+	"gorm.io/gorm"
 )
 `
